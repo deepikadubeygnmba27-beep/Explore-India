@@ -10,9 +10,11 @@
   }
 })();
 
-// Hide a broken image so the labelled colour block shows instead
+// If a photo file is missing, hide its whole slot so the page stays tidy
 document.querySelectorAll('.media img').forEach(function (img) {
-  img.addEventListener('error', function () { img.remove(); });
+  function hide() { img.parentElement.classList.add('is-empty'); }
+  img.addEventListener('error', hide);
+  if (img.complete && img.naturalWidth === 0) { hide(); }
 });
 
 // Footer year
