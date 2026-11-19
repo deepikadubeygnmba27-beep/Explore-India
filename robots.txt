@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://deepikadubeygnmba27-beep.github.io/Explore-India/sitemap.xml
